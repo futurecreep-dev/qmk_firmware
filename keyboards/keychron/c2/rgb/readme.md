@@ -2,15 +2,15 @@
 
 ![Keychron C2](https://i.imgur.com/QtV3Kk3.jpg)
 
-A customizable TKL keyboard.
+A customizable Full-Size ANSI keyboard.
 
-* Keyboard Maintainer(s): [SonixQMK](https://github.com/SonixQMK), [IsaacDynamo](https://github.com/IsaacDynamo), [noldevin](https://github.com/noldevin), [vjdato21](https://github.com/vjdato21), [aaronsb](https://github.com/aaronsb)
+* Keyboard Maintainer(s): [SonixQMK](https://github.com/SonixQMK), [IsaacDynamo](https://github.com/IsaacDynamo), [noldevin](https://github.com/noldevin), [vjdato21](https://github.com/vjdato21), [aaronsb](https://github.com/aaronsb), [JAO1988](https://github.com/JAO1988)
 * Hardware Supported: Keychron C2 RGB
 * Hardware Availability: [Keychron](https://www.keychron.com/products/keychron-c2-wired-mechanical-keyboard)
 
 Make example for this keyboard (after setting up your build environment):
 
-    make keychron/c2/rgb:default | make keychron/c2/rgb:via
+    make keychron/c2/rgb:default
 
 ## How to Flash
 Flashing example for this keyboard:
