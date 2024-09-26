@@ -18,55 +18,57 @@
 
 bool mode_leds_show = true;
 
-enum layer_names {
-    WIN_BASE,
-    WIN_FN,
-    MAC_BASE,
-    MAC_FN,
-}; /* Taken from the default keymap for readability */
-
 #ifdef DIP_SWITCH_ENABLE
     static void mode_leds_update(void){
         if (mode_leds_show && layer_state_is(WIN_BASE)) {
-            gpio_write_pin_high(LED_WIN_PIN);
+            gpio_write_pin_high(LED_WIN_PIN) && gpio_write_pin_low(LED_MAC_PIN);
         } else if (mode_leds_show && layer_state_is(MAC_BASE)) {
-            gpio_write_pin_high(LED_MAC_PIN);
+            gpio_write_pin_high(LED_MAC_PIN) && gpio_write_pin_low(LED_WIN_PIN);
         }
     }
-
     bool dip_switch_update_kb(uint8_t index, bool active) {
         if (!dip_switch_update_user(index, active)) {
             return false;
         }
         if (index == 0) {
-            default_layer_set(active ? MAC_BASE : WIN_BASE);
+            if (active) {
+                default_layer_state_set_kb(1 << MAC_BASE); /* set layer 2 to be on */
+            }
         }
-
         mode_leds_update();
         return true;
-    }
-
-    void keyboard_pre_init_kb(void) {
-        // Setup Win & Mac LED Pins as output
-        gpio_set_pin_output(LED_WIN_PIN);
-        gpio_set_pin_output(LED_MAC_PIN);
     }
 #endif // DIP_SWITCH_ENABLE
 
 
+void keyboard_pre_init_kb(void) {
+    // Setup Win & Mac LED Pins as output
+    gpio_set_pin_output(LED_WIN_PIN);
+    gpio_set_pin_output(LED_MAC_PIN);
+}
+
+void keyboard_post_init_kb(void) {
+    // Setup Default Keymap.
+    // If you chose to not have the dipswich enabled change this _WIN_BASE to be your default keymap.
+    // Eg: _MAC_BASE
+    default_layer_state_set_kb(1 << WIN_BASE); /* set layer 0 to be on */
+}
+
 #ifdef RGB_MATRIX_SLEEP
     void suspend_power_down_kb(void) {
         // Turn leds off
-        mode_leds_show = false;
+        mode_leds_show = false
         mode_leds_update();
-
+        #ifdef RGB_MATRIX
         rgb_matrix_set_suspend_state(true);
+        #endif
     }
 
     void suspend_wakeup_init_kb(void) {
         mode_leds_show = true;
         mode_leds_update();
-
+        #ifdef RGB_MATRIX
         rgb_matrix_set_suspend_state(false);
+        #endif
     }
 #endif // RGB_MATRIX_SLEEP

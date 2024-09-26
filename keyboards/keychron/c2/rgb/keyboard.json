@@ -5,7 +5,7 @@
     "bootloader": "sn32-dfu",
     "diode_direction": "ROW2COL",
     "features": {
-        "bootmagic": false,
+        "bootmagic": true,
         "command": false,
         "console": false,
         "extrakey": true,
@@ -14,6 +14,7 @@
         "rgb_matrix": true,
         "dip_switch": true
     },
+	"bootloader_instructions": "Hold FN + ESC",
     "indicators": {
         "caps_lock": "B13",
 		"num_lock": "B14",
@@ -28,6 +29,7 @@
     },
     "debounce": 1,
     "processor": "SN32F248BF",
+	"url": "https://www.keychron.com/products/keychron-c2-wired-mechanical-keyboard?variant=32294075170905"
     "usb": {
         "device_version": "1.0.0",
         "pid": "0xFE22",
