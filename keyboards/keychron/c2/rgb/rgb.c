@@ -57,7 +57,7 @@ void keyboard_post_init_kb(void) {
 #ifdef RGB_MATRIX_SLEEP
     void suspend_power_down_kb(void) {
         // Turn leds off
-        mode_leds_show = false
+        mode_leds_show = false;
         mode_leds_update();
         #ifdef RGB_MATRIX
         rgb_matrix_set_suspend_state(true);
