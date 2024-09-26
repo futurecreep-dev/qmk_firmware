@@ -1,5 +1,5 @@
 /*
-Copyright 2024 SiphonedAnomally
+Copyright 2024 SiphonedAnomaly
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,8 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SN32F2XX_RGB_MATRIX_ROW_PINS { C0, C1, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, B6, B7, B8, B9, B10, B11 }
 #define SN32F2XX_PWM_OUTPUT_ACTIVE_LEVEL SN32F2XX_PWM_OUTPUT_ACTIVE_HIGH /* Parameter added for PWM Transistor Permutations */
 #define SN32F2XX_RGB_OUTPUT_ACTIVE_LEVEL SN32F2XX_RGB_OUTPUT_ACTIVE_LOW  /* Parameter added for RGB Transistor Permutations */
-
-#define BACKLIGHT_LEVELS 8
 
 #define LED_WIN_PIN B12
 #define LED_MAC_PIN B15

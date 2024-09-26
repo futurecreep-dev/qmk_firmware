@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [WIN_FN] = LAYOUT_ansi( // Windows FN Overlay
         /*  0         1         2         3         4         5         6         7         8         9         10        11        12        13        14        15        16       17        18        19        20      */
-		QK_BOOT,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,    BL_UP,  BL_DOWN,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  			KC_SNIP,  _______,  RGB_MOD,
+		QK_BOOT,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  			KC_SNIP,  _______,  RGB_MOD,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_HUI,  RGB_VAI,  RGB_SAI,  RGB_M_TW, _______,  _______,  _______,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_HUD,  RGB_VAD,  RGB_SAD,  RGB_M_X,  RGB_M_G,  RGB_M_T,  _______,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,			  _______,								  RGB_M_SW, RGB_M_SN, RGB_M_K,
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [MAC_FN] = LAYOUT_ansi( // Mac FN Overlay
         /*  0         1         2         3         4         5         6         7         8         9         10        11        12        13        14        15        16       17        18        19        20      */
-		QK_BOOT,  KC_BRID,  KC_BRIU,  KC_MSSN,  KC_FIND,    BL_UP,  BL_DOWN,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  			KC_MSNP,  _______,  RGB_MOD,
+		QK_BOOT,  KC_BRID,  KC_BRIU,  KC_MSSN,  KC_FIND,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  			KC_MSNP,  _______,  RGB_MOD,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_HUI,  RGB_VAI,  RGB_SAI,  RGB_M_TW, _______,  _______,  _______,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_HUD,  RGB_VAD,  RGB_SAD,  RGB_M_X,  RGB_M_G,  RGB_M_T,  _______,
 		_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,			  _______,								  RGB_M_SW, RGB_M_SN, RGB_M_K,

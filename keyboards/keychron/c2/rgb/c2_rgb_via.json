@@ -2,9 +2,9 @@
   "keyboard_name": "Keychron C2 RGB",
   "name": "Keychron C2 RGB",
   "url": "https://www.keychron.com/products/keychron-c2-wired-mechanical-keyboard",
-  "vendorId": "0x05AC",
-  "productId": "0x024F",
-  "maintainer": "aaronsb",
+  "vendorId": "0x3434",
+  "productId": "0xFE22",
+  "maintainer": "SiphonedAnomaly",
   "lighting": {
       "extends": "qmk_rgblight",
       "underglowEffects": [
