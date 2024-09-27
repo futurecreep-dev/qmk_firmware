@@ -24,15 +24,15 @@ bool mode_leds_show = true;
             gpio_write_pin_low(LED_MAC_PIN);
             gpio_write_pin_low(LED_WIN_PIN);
         }
-        else
-			if (layer_state_is(WIN_BASE)) {
-            gpio_write_pin_high(LED_WIN_PIN) && gpio_write_pin_low(LED_MAC_PIN);
-			} 
-		else
-			if (layer_state_is(MAC_BASE)) {
-            gpio_write_pin_high(LED_MAC_PIN) && gpio_write_pin_low(LED_WIN_PIN);
-		}
-	}
+        else {
+            if (layer_state_is(WIN_BASE)) {
+                gpio_write_pin_high(LED_WIN_PIN) && gpio_write_pin_low(LED_MAC_PIN);
+            } 
+            if (layer_state_is(MAC_BASE)) {
+                gpio_write_pin_high(LED_MAC_PIN) && gpio_write_pin_low(LED_WIN_PIN);
+            }
+        }
+    }
     bool dip_switch_update_kb(uint8_t index, bool active) {
         if (!dip_switch_update_user(index, active)) {
             return false;
