@@ -29,6 +29,10 @@
 
 #include <lib/lib8tion/lib8tion.h>
 
+#ifdef OPENRGB_ENABLE
+#    include "openrgb.h"
+#endif
+
 #ifndef RGB_MATRIX_CENTER
 const led_point_t k_rgb_matrix_center = {112, 32};
 #else
@@ -59,6 +63,17 @@ __attribute__((weak)) RGB rgb_matrix_hsv_to_rgb(HSV hsv) {
 #undef RGB_MATRIX_EFFECT
 // -----End rgb effect includes macros-------
 // ------------------------------------------
+
+#if !defined(RGB_MATRIX_DEFAULT_MODE)
+#    if defined(OPENRGB_ENABLE)
+#        define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_OPENRGB_DIRECT
+#    elif defined(ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT)
+#        define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
+#    else
+// fallback to solid colors if RGB_MATRIX_CYCLE_LEFT_RIGHT is disabled in userspace
+#        define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
+#    endif
+#endif
 
 #if defined(RGB_MATRIX_BRIGHTNESS_TURN_OFF_VAL) && (RGB_MATRIX_BRIGHTNESS_TURN_OFF_VAL >= RGB_MATRIX_MAXIMUM_BRIGHTNESS)
 #    pragma error("RGB_MATRIX_BRIGHTNESS_TURN_OFF_VAL must be less than RGB_MATRIX_MAXIMUM_BRIGHTNESS")

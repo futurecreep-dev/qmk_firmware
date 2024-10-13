@@ -26,7 +26,7 @@
 extern void factory_test_send(uint8_t* payload, uint8_t length);
 
 #    ifndef RAW_EPSIZE
-#        define RAW_EPSIZE 32
+#        define RAW_EPSIZE 64
 #    endif
 
 #ifndef SPI_SCK_PIN
