@@ -23,7 +23,7 @@
 #include "report_buffer.h"
 
 #ifndef RAW_EPSIZE
-#    define RAW_EPSIZE 32
+#    define RAW_EPSIZE 64
 #endif
 
 #ifndef CKBT51_INT_INPUT_PIN
