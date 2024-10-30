@@ -96,11 +96,8 @@ bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 is_orgb_mode = !is_orgb_mode;
         #ifdef RGB_MATRIX_ENABLE
-                if (is_orgb_mode) {
-                    rgb_matrix_set_color_all(0,255,0);
-                } else {
-                    rgb_matrix_set_color_all(0,0,255);
-                }
+            //TODO reliable visual confirmation on mode switch
+            //if(is_orgb_mode){} else {}
         #endif
             }
         #endif
