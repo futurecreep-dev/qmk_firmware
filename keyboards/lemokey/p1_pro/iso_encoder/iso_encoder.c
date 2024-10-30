@@ -16,9 +16,6 @@
 
 #include "quantum.h"
 
-#ifdef VIA_OPENRGB_HYBRID
-uint8_t is_orgb_mode;
-#endif
 
 // clang-format off
 
