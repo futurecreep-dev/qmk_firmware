@@ -38,6 +38,9 @@ enum {
     P2P4G,
     BAT_LVL,
 #endif
+#ifdef VIA_OPENRGB_HYBRID
+    ORGB,
+#endif
 #ifdef ANANLOG_MATRIX
     PROF1,
     PROF2,
@@ -57,6 +60,9 @@ enum {
     #define PROF1 KC_TRANS
     #define PROF2 KC_TRANS
     #define PROF3 KC_TRANS
+#endif
+#ifndef VIA_OPENRGB_HYBRID
+    #define ORGB KC_TRANS
 #endif
 
 #define KC_TASK KC_TASK_VIEW
