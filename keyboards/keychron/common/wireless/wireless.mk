@@ -19,3 +19,6 @@ SRC += \
 
 VPATH += $(TOP_DIR)/keyboards/keychron/$(WIRELESS_DIR)
 
+OPENRGB_ENABLE = yes
+VIA_OPENRGB_HYBRID = yes
+

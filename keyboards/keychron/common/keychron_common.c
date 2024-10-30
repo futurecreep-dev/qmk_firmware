@@ -28,6 +28,10 @@
 #    include "lkbt51.h"
 #endif
 
+#ifdef VIA_OPENRGB_HYBRID
+bool is_orgb_mode = true; //Default value of OpenRGB mode
+#endif
+
 bool     is_siri_active = false;
 uint32_t siri_timer     = 0;
 
@@ -87,6 +91,19 @@ bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false; // Skip all further processing of this key
+        case ORGB:
+        #ifdef VIA_OPENRGB_HYBRID
+            if (record->event.pressed) {
+                is_orgb_mode = !is_orgb_mode;
+        #ifdef RGB_MATRIX_ENABLE
+                if (is_orgb_mode) {
+                    rgb_matrix_set_color_all(0,255,0);
+                } else {
+                    rgb_matrix_set_color_all(0,0,255);
+                }
+        #endif
+            }
+        #endif
         default:
             return true; // Process all other keycodes normally
     }

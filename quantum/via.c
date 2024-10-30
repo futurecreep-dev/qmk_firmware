@@ -277,7 +277,6 @@ __attribute__((weak)) bool via_command_kb(uint8_t *data, uint8_t length) {
 }
 
 void raw_hid_receive(uint8_t *data, uint8_t length) {
-// NEW begin
 #ifdef VIA_OPENRGB_HYBRID
     if (is_orgb_mode) {
 #ifdef OPENRGB_ENABLE
@@ -286,7 +285,6 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
         return;
     }        
 #endif
-// NEW end
 	
     uint8_t *command_id   = &(data[0]);
     uint8_t *command_data = &(data[1]);
