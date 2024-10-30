@@ -78,7 +78,8 @@
     {"name": "Bluetooth Host 2", "title": "Bluetooth Host 2", "shortName": "BTH2"},
     {"name": "Bluetooth Host 3", "title": "Bluetooth Host 3", "shortName": "BTH3"},
     {"name": "2.4G Host", "title": "2.4G Host", "shortName": "2.4G"},
-    {"name": "Battery Level", "title": "Show battery level", "shortName": "Batt"}
+    {"name": "Battery Level", "title": "Show battery level", "shortName": "Batt"},
+    {"name": "VIA/OpenRGB Switch", "title": "Switch between VIA/OpenRGB", "shortName": "V/RGB"}
   ],
   "matrix": {"rows": 6, "cols" : 16},
   "layouts": {
