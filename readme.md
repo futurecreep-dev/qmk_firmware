@@ -1,4 +1,4 @@
-# View the wireless_playground_openrgb branch!
+# View the wireless_openrgb_common branch!
 
 # Quantum Mechanical Keyboard Firmware
 
