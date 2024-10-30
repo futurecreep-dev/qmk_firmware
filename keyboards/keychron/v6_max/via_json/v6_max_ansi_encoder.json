@@ -69,8 +69,8 @@
       {"name": "Right Option", "title": "Right Option", "shortName": "ROpt"},
       {"name": "Left Cmd", "title": "Left Command", "shortName": "LCmd"},
       {"name": "Right Cmd", "title": "Right Command", "shortName": "RCmd"},
-      {"name": "Misson Control", "title": "Misson Control in Mac", "shortName": "MCtl"},
-      {"name": "Lanuch Pad", "title": "Lanuch Pad in Windows", "shortName": "LPad"},
+      {"name": "Mission Control", "title": "Mission Control in Mac", "shortName": "MCtl"},
+      {"name": "Launch Pad", "title": "Launch Pad in Windows", "shortName": "LPad"},
       {"name": "Task View", "title": "Task View in Windows", "shortName": "Task"},
       {"name": "File Explorer", "title": "File Explorer in Windows", "shortName": "File"},
       {"name": "Screen shot", "title": "Screenshot in macOS", "shortName": "SShot"},
@@ -80,7 +80,8 @@
       {"name": "Bluetooth Host 2", "title": "Bluetooth Host 2", "shortName": "BTH2"},
       {"name": "Bluetooth Host 3", "title": "Bluetooth Host 3", "shortName": "BTH3"},
       {"name": "2.4G", "title": "2.4G", "shortName": "2.4G"},
-      {"name": "Battery Level", "title": "Show battery level", "shortName": "Batt"}
+      {"name": "Battery Level", "title": "Show battery level", "shortName": "Batt"},
+      {"name": "VIA/OpenRGB Switch", "title": "Switch between VIA/OpenRGB", "shortName": "V/RGB"}
     ],
     "matrix": {"rows": 6, "cols" : 21},
     "layouts": {
