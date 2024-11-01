@@ -80,6 +80,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     static uint8_t host_idx = 0;
 
     switch (keycode) {
+        case ORGB:
+        #ifdef VIA_OPENRGB_HYBRID
+            if (record->event.pressed) {
+                is_orgb_mode = !is_orgb_mode;
+        #ifdef RGB_MATRIX_ENABLE
+            //TODO reliable visual confirmation on mode switch
+            //if(is_orgb_mode){} else {}
+        #endif
+            }
+        #endif
         case KC_LOPTN:
         case KC_ROPTN:
         case KC_LCMMD:
