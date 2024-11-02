@@ -1,4 +1,4 @@
-# View the wireless_openrgb_common branch!
+# View the [wireless_openrgb_common](https://github.com/futurecreep-dev/qmk_firmware/tree/wireless_openrgb_common) branch!
 
 # Quantum Mechanical Keyboard Firmware
 
