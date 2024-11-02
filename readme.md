@@ -4,6 +4,7 @@
 ❗❗ Important info:
 * OpenRGB only works over cable (same as VIA)
 * By default use Fn + O to switch between OpenRGB support and VIA support
+* By default the switch sets to OpenRGB
 * Look at your first 3 key lights for switch confirmation
 * Load your board's draft definition from ``via_json/`` to VIA to get the switch as "V/RGB" under Custom and remap as you like
 * When switched to VIA make sure OpenRGB software is not running to prevent VIA errors⚠️
