@@ -14,10 +14,14 @@ SRC += \
      $(BLUETOOTH_DIR)/battery.c \
      $(BLUETOOTH_DIR)/factory_test.c \
      $(BLUETOOTH_DIR)/bat_level_animation.c \
-     $(BLUETOOTH_DIR)/rtc_timer.c
+     $(BLUETOOTH_DIR)/rtc_timer.c \
+     $(BLUETOOTH_DIR)/hybrid_switch_animation.c
 
 VPATH += $(TOP_DIR)/keyboards/keychron/$(BLUETOOTH_DIR)
 
 # Work around RTC clock issue without touching chibios, refer to the link for this bug
 # https://forum.chibios.org/viewtopic.php?f=35&t=6197
 OPT_DEFS += -DRCC_APBENR1_RTCAPBEN
+
+OPENRGB_ENABLE = yes
+VIA_OPENRGB_HYBRID = yes

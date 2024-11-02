@@ -15,6 +15,10 @@
  */
 
 #include "k14_pro.h"
+#ifdef VIA_OPENRGB_HYBRID
+     bool is_orgb_mode = true; //Default value of the hybrid switch mode
+     #include "hybrid_switch_animation.h"
+#endif
 #ifdef KC_BLUETOOTH_ENABLE
 #    include "ckbt51.h"
 #    include "bluetooth.h"
@@ -85,8 +89,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 is_orgb_mode = !is_orgb_mode;
         #ifdef RGB_MATRIX_ENABLE
-            //TODO reliable visual confirmation on mode switch
-            //if(is_orgb_mode){} else {}
+            switch_animation_start(is_orgb_mode);
         #endif
             }
         #endif

@@ -57,7 +57,9 @@ void bat_level_animiation_start(uint8_t percentage) {
     cur_percentage           = 0;
     time_interval            = BAT_LEVEL_GROWING_INTERVAL;
 #ifdef RGB_MATRIX_ENABLE
-    r = g = b = 255;
+    r = 255;
+    g = 166;
+    b = 173;
 #endif
 }
 

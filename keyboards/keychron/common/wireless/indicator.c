@@ -37,9 +37,13 @@
 #    ifdef RGB_MATRIX_ENABLE
 #        include "rgb_matrix.h"
 #    endif
+#    ifdef VIA_OPENRGB_HYBRID
+#        include "hybrid_switch_animation.h"
+#    endif
 #    include "bat_level_animation.h"
 #    include "eeprom.h"
 #endif
+
 
 #define HOST_INDEX_MASK 0x0F
 #define HOST_P2P4G 0x10
@@ -137,7 +141,7 @@ static pin_t p24g_led_pin_list[P24G_HOST_DEVICES_COUNT] = P24G_HOST_LED_PIN_LIST
 #    define LED_NONE_INDICATORS_KB rgb_matrix_none_indicators_kb
 #    define SET_ALL_LED_OFF() rgb_matrix_set_color_all(0, 0, 0)
 #    define SET_LED_OFF(idx) rgb_matrix_set_color(idx, 0, 0, 0)
-#    define SET_LED_ON(idx) rgb_matrix_set_color(idx, 255, 255, 255)
+#    define SET_LED_ON(idx) rgb_matrix_set_color(idx, 255, 166, 173)
 #    define SET_LED_BT(idx) rgb_matrix_set_color(idx, 0, 0, 255)
 #    define SET_LED_P24G(idx) rgb_matrix_set_color(idx, 0, 255, 0)
 #    define SET_LED_LOW_BAT(idx) rgb_matrix_set_color(idx, 255, 0, 0)
@@ -549,6 +553,9 @@ void indicator_task(void) {
 #if (defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)) && defined(BAT_LEVEL_LED_LIST)
     bat_level_animiation_task();
 #endif
+#if (defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)) && defined(VIA_OPENRGB_HYBRID)
+    switch_animation_task();
+#endif
     if (indicator_config.value && timer_elapsed32(indicator_timer_buffer) >= next_period) {
         indicator_timer_cb((void *)&type);
         indicator_timer_buffer = timer_read32();
@@ -591,6 +598,11 @@ __attribute__((weak)) void os_state_indicate(void) {
     if (host_keyboard_led_state().kana) {
         SET_LED_ON(KANA_LOCK_INDEX);
     }
+#    endif
+#    if (defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)) && defined(VIA_OPENRGB_HYBRID)
+        if (switch_animation_isactive()) {
+            switch_animation_indicate();
+        }
 #    endif
 }
 

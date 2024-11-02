@@ -29,7 +29,10 @@
 #endif
 
 #ifdef VIA_OPENRGB_HYBRID
-bool is_orgb_mode = true; //Default value of OpenRGB mode
+     bool is_orgb_mode = true; //Default value of the hybrid switch mode
+     #ifdef RGB_MATRIX_ENABLE
+     #    include "hybrid_switch_animation.h"
+     #endif
 #endif
 
 bool     is_siri_active = false;
@@ -96,8 +99,7 @@ bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 is_orgb_mode = !is_orgb_mode;
         #ifdef RGB_MATRIX_ENABLE
-            //TODO reliable visual confirmation on mode switch
-            //if(is_orgb_mode){} else {}
+            switch_animation_start(is_orgb_mode);
         #endif
             }
         #endif

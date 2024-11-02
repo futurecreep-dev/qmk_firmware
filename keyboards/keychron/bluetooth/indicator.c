@@ -30,6 +30,9 @@
 #    ifdef RGB_MATRIX_ENABLE
 #        include "rgb_matrix.h"
 #    endif
+#    ifdef VIA_OPENRGB_HYBRID
+#        include "hybrid_switch_animation.h"
+#    endif
 #    include "i2c_master.h"
 #    include "bat_level_animation.h"
 #    include "eeprom.h"
@@ -467,6 +470,10 @@ void indicator_battery_low(void) {
 void indicator_task(void) {
     bat_level_animiation_task();
 
+    #if defined(VIA_OPENRGB_HYBRID)
+    switch_animation_task();
+    #endif
+
     if (indicator_config.value && sync_timer_elapsed32(indicator_timer_buffer) >= next_period) {
         indicator_timer_cb((void *)&type);
         indicator_timer_buffer = sync_timer_read32();
@@ -505,6 +512,11 @@ __attribute__((weak)) void os_state_indicate(void) {
     if (host_keyboard_led_state().kana) {
         SET_LED_ON(KANA_LOCK_INDEX);
     }
+#    endif
+#    if (defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)) && defined(VIA_OPENRGB_HYBRID)
+        if (switch_animation_isactive()) {
+            switch_animation_indicate();
+        }
 #    endif
 }
 

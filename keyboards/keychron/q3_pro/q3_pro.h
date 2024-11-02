@@ -38,6 +38,9 @@ enum {
     KC_SNAP,
     KC_CTANA,
     KC_SIRI,
+#ifdef VIA_OPENRGB_HYBRID
+    ORGB,
+#endif
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
     BT_HST2,
